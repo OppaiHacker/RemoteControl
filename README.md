@@ -6,7 +6,7 @@ Struktura Bazy w Mongo DB
 
 
 <ol>
-  <li>Plik main.pyw Przenieść do autostartu, Lub odpal ręcznie</li>
+  <li>Plik main.pyw Przenieść do autostartu, Lub odpal ręcznie (komputer musi być w tej samej sieci)</li>
 
   <li>Zrób Bazę Danych w mongoDB</li>
   <ul>
