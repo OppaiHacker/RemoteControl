@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     const consoleDiv = document.getElementById("console");
     const inputElement = document.getElementById("input");
-    const inputUrl = document.getElementById("filename");
-    const inputName = document.getElementById("fileurl");
+    const inputName = document.getElementById("filename");
+    const inputUrl = document.getElementById("fileurl");
     const ClientInfo = document.getElementById("client_info");
     const popup = document.querySelector("#popup")
 
