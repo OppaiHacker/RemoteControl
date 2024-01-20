@@ -13,7 +13,7 @@ Struktura Bazy w Mongo DB
   ```
   
   <li>Plik main.pyw Przenieść do autostartu, Lub odpal ręcznie (komputer musi być w tej samej sieci. Można robić wszystko na 1 komputerze)</li>
-  <li> W pliku main.pyw zmień IP (linjika 36, zmi0eń tylko to pierwsze) na ip które ma twój komputer wykorzystwany jako serwer dla Backendu (server.js)</li>
+  <li> W pliku main.pyw zmień IP (linjika 36, zmień tylko to pierwsze) na ip które ma twój komputer wykorzystwany jako serwer dla Backendu (server.js)</li>
 
   <li>Zrób Bazę Danych w mongoDB</li>
   <ul>
