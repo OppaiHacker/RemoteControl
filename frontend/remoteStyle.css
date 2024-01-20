@@ -1,0 +1,91 @@
+
+
+#console {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+#console::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+#main {
+    width: 70vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#console {
+    width: calc(100% - 24px);
+    height: 90%;
+    padding: 10px;
+    overflow: auto;
+    border: 2px solid #00FF00;
+    background-color: #000;
+    white-space: pre-wrap;
+    position: relative;
+    border-radius: 20px;
+
+}
+
+#console img {
+    position: fixed;
+    animation: XD infinite 20s;
+    bottom: 28%;
+    text-align: center;
+    transform: translate(-5vw);
+
+}
+
+@keyframes XD {
+    1% {
+        transform: translate(-5vw);
+    } 50% {
+        transform: translate(50vw);
+    } 100% {
+        transform: translate(-5vw);
+    }
+}
+
+input {
+    width: calc(90% - 20px);
+    padding: 10px;
+    background-color: #000;
+    color: #00FF00; 
+    border: none;
+    outline: none;
+}
+
+button {
+    width: calc(10% - 20px);
+    padding: 10px;
+    background-color: #00FF00;
+    color: #000;
+    border: none;
+    cursor: pointer;
+}
+
+span {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+    padding: 0;
+    width: calc(100% - 20px);
+}
+
+.script {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.script input {
+    width: 200px;
+    height: 30px;
+    margin: 10px;
+}
+
+.script button {
+    width: 200px;
+    height: 50px;
+}

