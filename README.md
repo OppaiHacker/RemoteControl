@@ -4,9 +4,16 @@ Struktura Bazy w Mongo DB
 
 ![image](https://github.com/OppaiHacker/RemoteControl/assets/89047121/00f46916-9ac7-4bd6-9208-d5dd82288fe6)
 
-
+## Setup
 <ol>
+  <li>Zainstaluj Pythona (ja mam 3.12 chyba) i paczki</li>   
+  
+  ```
+   $ pip install os sys time socket requests flask flask-cors threading subprocess datetime 
+  ```
+  
   <li>Plik main.pyw Przenieść do autostartu, Lub odpal ręcznie (komputer musi być w tej samej sieci. Można robić wszystko na 1 komputerze)</li>
+  <li> W pliku main.pyw zmień IP (linjika 36, zmi0eń tylko to pierwsze) na ip które ma twój komputer wykorzystwany jako serwer dla Backendu (server.js)</li>
 
   <li>Zrób Bazę Danych w mongoDB</li>
   <ul>
@@ -21,10 +28,12 @@ Struktura Bazy w Mongo DB
   <li>Gotowe</li>
 </ol>
 
+## Screenshots
+
 ![image](https://github.com/OppaiHacker/RemoteControl/assets/89047121/f1a9fa77-c7a8-461e-8bf9-e1ffa6ad512d)
 ![image](https://github.com/OppaiHacker/RemoteControl/assets/89047121/e043ea07-aef8-445a-90ae-b9b24732892a)
 
-# Problemy
+## Problemy
 * Dane się nie wyświetlają
   => wyłącz adblocka <br>
 ![image](https://github.com/OppaiHacker/RemoteControl/assets/89047121/988f167c-c0f7-4b6f-8f0d-16790c934e32)
