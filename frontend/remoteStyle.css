@@ -15,6 +15,13 @@
     flex-direction: column;
 }
 
+#main > span:nth-child(2) {
+    border-radius: 5px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+}
+
 #console {
     width: calc(100% - 24px);
     height: 90%;
@@ -31,7 +38,7 @@
 #console img {
     position: fixed;
     animation: XD infinite 20s;
-    bottom: 28%;
+    bottom: 32%;
     text-align: center;
     transform: translate(-5vw);
 
@@ -54,6 +61,11 @@ input {
     color: #00FF00; 
     border: none;
     outline: none;
+}
+
+#input {
+    padding: 15px;
+    font-size: 15px;
 }
 
 button {
@@ -88,4 +100,26 @@ span {
 .script button {
     width: 200px;
     height: 50px;
+}
+
+#client_info > span > p {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    color: #20ff03;
+}
+
+#client_info span {
+    all: unset;
+    display: flex;
+    border-bottom: #348f28 2px solid;
+    margin-bottom: 5px;
+}
+
+#client_info {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    color: #348f28;
 }
