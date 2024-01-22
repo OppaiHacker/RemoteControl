@@ -31,6 +31,7 @@ Struktura Bazy w Mongo DB
 ## Screenshots
 
 ![image](https://github.com/OppaiHacker/RemoteControl/assets/89047121/f1a9fa77-c7a8-461e-8bf9-e1ffa6ad512d)
+![image](https://github.com/OppaiHacker/RemoteControl/assets/89047121/4e42c4b4-b07a-4583-9667-b5ff143702d2)
 ![image](https://github.com/OppaiHacker/RemoteControl/assets/89047121/e043ea07-aef8-445a-90ae-b9b24732892a)
 
 ## Problemy
