@@ -9,7 +9,7 @@ Struktura Bazy w Mongo DB
   <li>Zainstaluj Pythona (ja mam 3.12 chyba) i paczki</li>   
   
   ```
-   $ pip install os sys time socket requests flask flask-cors threading subprocess datetime 
+   $ pip install requests flask flask-cors datetime 
   ```
   
   <li>Plik main.pyw Przenieść do autostartu, Lub odpal ręcznie (komputer musi być w tej samej sieci. Można robić wszystko na 1 komputerze)</li>
