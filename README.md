@@ -2,7 +2,8 @@
 
 Struktura Bazy w Mongo DB
 
-![image](https://github.com/OppaiHacker/RemoteControl/assets/89047121/00f46916-9ac7-4bd6-9208-d5dd82288fe6)
+![image](https://github.com/OppaiHacker/RemoteControl/assets/89047121/7376a72b-f007-48ed-a8d5-10891654d3f4)
+
 
 ## Setup
 <ol>
