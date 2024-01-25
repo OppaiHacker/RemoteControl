@@ -9,17 +9,19 @@ app.use(express.json());
 
 app.use(cors({
     origin: '*',
+    credentials: true,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     preflightContinue: false,
-    optionsSuccessStatus: 204,
+    optionsSuccessStatus: 200,
+    allowedHeaders: 'Content-Type,Authorization',
 }));
-
 
 
 mongoose.connect('mongodb://localhost:27017/pzsPCs', {
     useUnifiedTopology: true,
 });
 
+app.options('/UpdateVersion', cors());
 
 const Record = mongoose.model('PCs', {
     IP: String,
@@ -31,8 +33,6 @@ const Record = mongoose.model('PCs', {
 const VRecord = mongoose.model('VersionControl', {
     NewScriptVersion: Number,
 });
-
-
 
 
 app.post('/UpdateVersion', async (req, res) => {
@@ -142,6 +142,8 @@ app.get('/getversion', async (req, res) => {
       res.status(500).json({ error: 'Wystąpił błąd podczas pobierania wersji.' });
     }
 });
+
+
 
 app.listen(port, () => {
     console.log(`Serwer nasłuchuje na porcie ${port}`);

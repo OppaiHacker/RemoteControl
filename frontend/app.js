@@ -12,7 +12,7 @@ function Panic(target) {
     })
     .then((response) => response.json())
     .then((json) => console.log(json))
-    .catch(error => console.error('Fetch error:', error));
+    .catch(error => console.error(`Maszyna ${target} nie dopowiada.`));
 }
 
 fetch('http://localhost:3001/getversion')
@@ -58,6 +58,7 @@ fetch('http://localhost:3001/getips')
           // Znajdź kontener HTML, gdzie będziemy umieszczać dane
           const dataContainer = document.getElementById('data-container');
 
+
           // zapierdalaj po każdym rekordzie w tablicy
           data.forEach(record => {
             // elementy HTML
@@ -67,9 +68,12 @@ fetch('http://localhost:3001/getips')
             const recordElement = document.createElement('div');
 
             if (version > record.ScriptVersion) {
+
+              console.log(version, record.ScriptVersion);
+
             
               recordElement.innerHTML = `
-                <div class="target_info" onclick="openConsoleAt('${record.IP}', '${record.HostName}', '${record.LastOnline}', '${record.ScriptVersion}')">
+                <div class="target_info" onclick="openConsoleAt('${record.IP}', '${record.HostName}', '${record.LastOnline}', '${record.ScriptVersion}', 'true')">
                   <p>IP: ${record.IP}</p>
                   <p>HostName: ${record.HostName}</p>
                   <p>LastOnline: ${record.LastOnline}</p>
@@ -77,11 +81,11 @@ fetch('http://localhost:3001/getips')
                 </div>
                 
               `
-              ;
             } else {
+
               
               recordElement.innerHTML = `
-              <div class="target_info" onclick="openConsoleAt('${record.IP}', '${record.HostName}', '${record.LastOnline}', '${record.ScriptVersion}')">
+              <div class="target_info" onclick="openConsoleAt('${record.IP}', '${record.HostName}', '${record.LastOnline}', '${record.ScriptVersion}', 'false')">
                 <p>IP: ${record.IP}</p>
                 <p>HostName: ${record.HostName}</p>
                 <p>LastOnline: ${record.LastOnline}</p>
@@ -89,11 +93,8 @@ fetch('http://localhost:3001/getips')
               </div>
               
             `
-            ;
-            }
+            ;}
             
-            
-
             // Dodaj stworzony element do kontenera
             dataContainer.appendChild(recordElement);
           });

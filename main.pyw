@@ -35,7 +35,7 @@ def check_ip_reachability(ip_address, port):
         return False
 
 def validate_server():
-    ip_addresses_to_check = ['192.168.0.162', '192.168.21.37'] # Adresy IP, Wprowadż adres pod którym będzie znajdował sięodpalony (server.js) 
+    ip_addresses_to_check = ['192.168.0.162', '192.168.21.37', '127.0.0.1'] # Adresy IP, Wprowadż adres pod którym będzie znajdował sięodpalony (server.js) 
     port_to_check = 3001
 
     for ip_address in ip_addresses_to_check:
@@ -80,8 +80,10 @@ def background_task():
 
 @app.route('/Panic', methods=['POST'])
 def Panic():
-    subprocess.Popen("python -c \"import os, time; time.sleep(1); os.remove('{}');\"".format(sys.argv[0]))
-    sys.exit(0)
+    # subprocess.Popen("python -c \"import os, time; time.sleep(1); os.remove('{}');\"".format(sys.argv[0]))
+    # sys.exit(0)
+    result = f'Execute Panic for: {get_ip()}'
+    return jsonify({'status': 'success', 'result': result})
 
 @app.route('/execute_command', methods=['POST'])
 def execute_command_route():
